@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <title>Decifrador de poneglyph</title>
+    <link rel="shortcut icon" href="assets/fox1.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="./assets/logoluffy.png" alt="Logo alura" class="logo">
+    </header>
+    <main>
+        <section class="content">
+            <form class="container-principal" id="formulario">
+                <textarea placeholder="Digite seu texto poneglyph..."
+                    id="inputTexto"
+                    name="input"
+                    rows="15"
+                    cols="50"
+                ></textarea>
+                <div class="mensagem-informacao">
+                    <img src="assets/exclamation.png">
+                    <p>Apenas letras minúsculas e sem acento.</p>
+                    
+                </div> 
+                <div class="buttons-area">
+                    <button type="button" class="buttons criptografar" id="btnCriptografar">Criptografar</button>
+                    <button type="button" class="buttons descriptografar" id="btnDescriptografar">Descriptografar</button>
+                </div>
+            </form>            
+            <div id="output">
+                <h2 id="textoOutput" aria-live="polite"></h2>
+                <img id="img-luffy" class="output-img" src="assets/Luffy2.png" alt="Luffy" loading="lazy">
+                <h3>O texto Poneglyph será exibido aqui.</h3>
+                <button type="button" id="botaoCopiar" class="buttons botao-copiar">Copiar</button>
+            </div>       
+        </section>
+    </main>
+    <footer class="rodape">
+        <div>
+            <a href="https://github.com/Ariel-00" target="_blank" aria-label="Perfil no GitHub"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/hariel-oliveira-h2/" target="_blank" aria-label="Perfil no LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+        <h4>Desenvolvido por Hariel Oliveira</h4>
+    </footer>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root{
+   --cor-principal: #FF8C46;
+   --cor-secundaria: #495057;
+   --cor-terceira: #FFFFFF;
+   --cor-branca: #e9fbff;
+   --cor-fundo:#001969;
+   --cor-azul: #003d7d;
+   --cor-cinza:#ffd700;
+
+   --fonte-unica: "Montsserat", "sans-serif";
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animação para balançar suavemente */
+@keyframes balancar {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Animação para brilhar */
+@keyframes brilhar {
+    0% {
+        text-shadow: 0 0 5px var(--cor-branca), 0 0 10px var(--cor-branca), 0 0 15px var(--cor-branca);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--cor-branca), 0 0 30px var(--cor-branca), 0 0 40px var(--cor-branca);
+    }
+    100% {
+        text-shadow: 0 0 5px var(--cor-branca), 0 0 10px var(--cor-branca), 0 0 15px var(--cor-branca);
+    }
+}
+
+/* Animação para expandir e contrair */
+@keyframes expandirContrair {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--cor-fundo);
+    background-image: url("./assets/Luffy.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center; 
+    padding-left: 3rem; 
+    height: 100px; 
+}
+
+.logo {
+    height: 80%; 
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    flex: 1;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+    width: 100%;
+    max-width: 1200px; 
+    box-sizing: border-box;
+}
+
+#inputTexto {
+    width: 50%;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    outline: 0;
+    padding: 0.5rem;
+    text-transform: lowercase;
+    resize: none;
+    margin: 0;
+    max-width: 600px;
+}
+#inputTexto::placeholder {
+    color: var(--cor-azul); 
+    text-shadow: 
+        1px 1px 0 var(--cor-branca),
+        -1px -1px 0 var(--cor-branca),
+        1px -1px 0 var(--cor-branca),
+        -1px 1px 0 var(--cor-branca); 
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--cor-branca);
+    border-radius: 36px;
+    padding: 3rem;
+    height: 90%; 
+    width: 250px;
+    gap: 4%;
+    filter: drop-shadow(0 0 0.5rem var(--cor-branca));
+    box-shadow: 0.5px 0.5px 0.5rem var(--cor-branca);
+}
+#textoOutput {
+    animation: expandirContrair 2s ease-in-out infinite;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%; 
+    gap: 2%;
+    margin-top: 4%;
+    background-color: var(--cor-branca);
+    height: 60px;
+}
+
+.output-img {
+    width: 150%; 
+    max-width: 500px; 
+    height: auto; 
+    transition: transform 0.3s ease; 
+    
+}
+
+.output-img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease; 
+}
+.mensagem-informacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5% 0% 2% 15%;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 
+        1px 1px 0 var(--cor-branca),
+        -1px -1px 0 var(--cor-branca),
+        1px -1px 0 var(--cor-branca),
+        -1px 1px 0 var(--cor-branca);
+}
+
+textarea::placeholder {
+    text-transform: capitalize;
+    font-weight: bold;
+    animation: brilhar 3s ease-in-out infinite;
+}
+
+.buttons-area {
+    display: flex;
+	justify-content: space-between;
+    margin: 5% 15% 0 15%;
+} 
+
+.buttons {
+    border-radius: 24px;
+    font-size: 1.25rem;
+    font-family: var(--fonte-unica);
+    font-weight: bold;
+    width: 250px;
+    height: 60px;
+    cursor: pointer;
+    margin: 0 10px;
+    animation: pulsar 2s ease-in-out infinite;
+    text-shadow: 
+        1px 1px 0 var(--cor-cinza),
+        -1px -1px 0 var(--cor-cinza),
+        1px -1px 0 var(--cor-cinza),
+        -1px 1px 0 var(--cor-cinza);
+        
+}
+
+.criptografar {
+    color: var(--cor-azul);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.descriptografar {
+    color: var(--cor-azul);
+    background-color: var(--cor-branca);
+    border: none;
+}
+
+.botao-copiar {
+    background-color: var(--cor-branca);
+    color: var(--cor-azul); 
+    border: none;
+    display: none;
+    pointer-events: none;
+    font-weight: bold; 
+}
+.botao-copiar:hover {
+    border: 2px solid var(--cor-secundaria);
+    transition: 0.5s all;
+}
+
+.criptografar:hover {
+    border: 2px solid var(--cor-terceira);
+    transition: 0.5s all;
+}
+.descriptografar:hover {
+    border: 2px solid var(--cor-secundaria);
+    transition: 0.5s all;
+}
+
+h2 {
+    display: flex;
+    flex-direction: column;
+    word-break: break-word;
+    overflow: hidden;
+    overflow: auto;
+    font-size: 1.25rem;
+    color: var(--cor-azul);
+    font-weight: 300;  
+    height: 80%;  
+}
+
+h3 {
+    color: var(--cor-azul);
+    font-weight: 400;
+    font-size: 1.4rem;
+    align-items: center;
+    animation: balancar 3s ease-in-out infinite;
+}
+h2, h3 {
+    font-weight: bold;
+    text-shadow: 
+        1px 1px 0 var(--cor-branca),
+        -1px -1px 0 var(--cor-branca),
+        1px -1px 0 var(--cor-branca),
+        -1px 1px 0 var(--cor-branca);
+}
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%; 
+    gap: 2%;
+    margin-top: 4%;
+    background-color: var(--cor-branca);
+    width: 100%;
+    height: 60px;
+}
+.rodape a {
+    font-size: 1.2rem;
+    color: var(--cor-secundaria);
+    text-decoration: none; 
+}
+.rodape a:hover {
+    color: var(--cor-azul);
+    transform: scale(1.2);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.rodape ion-icon {
+    display: inline-block;
+}
+a {
+    font-size: 1.25rem;
+    color: var(--cor-secundaria); 
+}
+
+a:hover {
+    color: var(--cor-branca);
+    transform: scale(1.5);
+}
+
+h4 {
+    font-family: var(--fonte-unica);
+    font-weight: bold;
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    
+}
+
+@media screen and (max-width: 1200px) { 
+    
+    .logo {
+        margin: 10% 10%;
+            
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons-area {
+        gap: 10%;
+    } 
+    
+}
